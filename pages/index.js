@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Flex, Input, InputLeftAddon, Stack, InputGroup, Button } from '@chakra-ui/react';
+import { Flex, Input, InputLeftAddon, Stack, InputGroup, Button, UnorderedList } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
-import { generate } from 'fast-glob/out/managers/tasks';
 
 
 // graphql
@@ -38,6 +37,9 @@ export default function Index() {
           </InputGroup>
           <Button colorScheme='red' onClick={handleInput} size='large'>Submit </Button>
         </Stack>
+        <UnorderedList>
+          
+        </UnorderedList>
       </Flex>
     </Layout >
   );
