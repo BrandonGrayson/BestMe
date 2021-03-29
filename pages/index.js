@@ -22,6 +22,8 @@ export default function Index() {
     setInput("")
   }
 
+  const removeTodo = (id) => setTodos((todos) => todos.filter((todo) => todo.id !== id))
+
   return (
     <Layout>
       <Flex direction="column">
@@ -41,7 +43,7 @@ export default function Index() {
                 {todos.map(({text, id}) => (
                   <ListItem key={id}>
                     <span>{text}</span>
-                    <Button colorScheme='red' size='xs'>X</Button>
+                    <Button colorScheme='red' onClick={() => removeTodo(id)} size='xs'>X</Button>
                   </ListItem>
                 ))}
         </UnorderedList>
