@@ -6,10 +6,9 @@ import { generate } from 'fast-glob/out/managers/tasks';
 
 // graphql
 
-function generateId () {
-  return "_" + Math.random().toString(36).substr(2, 9)
+function generateId() {
+  return '_' + Math.random().toString(36).substr(2, 9)
 }
-
 
 export default function Index() {
   const [todos, setTodos] = useState([])
@@ -18,8 +17,10 @@ export default function Index() {
   const handleInput = () => {
     setTodos((todos) => todos.concat({
       text: input,
-      id: generateId
+      id: generateId()
     }))
+
+    setInput("")
   }
 
   return (
@@ -36,12 +37,7 @@ export default function Index() {
               // access the event, setInput to the value of event
           </InputGroup>
           <Button colorScheme='red' onClick={handleInput} size='large'>Submit </Button>
-
-          
         </Stack>
-
-
-
       </Flex>
     </Layout >
   );
