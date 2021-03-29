@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { Flex } from '@chakra-ui/react';
+import { Flex, Input, InputLeftAddon, Stack, InputGroup } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
-import { Button, ButtonGroup } from "@chakra-ui/react"
-import { Textarea } from "@chakra-ui/react"
+
+
 // graphql
 
 
 export default function Index() {
   const [todos, setTodos] = useState([])
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState('')
 
   const textAreaRef = React.useRef()
 
@@ -16,11 +16,19 @@ export default function Index() {
 
   return (
     <Layout>
-      <Flex direction="column"> 
-      
-      <h2>Major Priority:</h2> 
+      <Flex direction="column">
 
-    
+        <h2>Day Planner:</h2>
+
+        {/* <Stack spacing={4}> */}
+          <InputGroup>
+            <InputLeftAddon children="Major Priority" />
+            <Input type="tel" placeholder="phone number" />
+          </InputGroup>
+        {/* </Stack> */}
+
+
+
       </Flex>
     </Layout >
   );
