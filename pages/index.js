@@ -23,7 +23,8 @@ export default function Index() {
         {/* <Stack spacing={4}> */}
           <InputGroup>
             <InputLeftAddon children="Major Priority" />
-            <Input type="tel" placeholder="phone number" />
+            <Input type="text" value={input} onChange={(e) => setInput(e.target.value)}  placeholder="Major Priority" />
+              // access the event, setInput to the value of event
           </InputGroup>
         {/* </Stack> */}
 
