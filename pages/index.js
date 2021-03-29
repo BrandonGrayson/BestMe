@@ -1,18 +1,26 @@
 import React, { useState } from 'react';
 import { Flex, Input, InputLeftAddon, Stack, InputGroup, Button } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
+import { generate } from 'fast-glob/out/managers/tasks';
 
 
 // graphql
+
+function generateId () {
+  return "_" + Math.random().toString(36).substr(2, 9)
+}
 
 
 export default function Index() {
   const [todos, setTodos] = useState([])
   const [input, setInput] = useState('')
 
-  const textAreaRef = React.useRef()
-
-  console.log(textAreaRef.current?.value);
+  const handleInput = () => {
+    setTodos((todos) => todos.concat({
+      text: input,
+      id: generateId
+    }))
+  }
 
   return (
     <Layout>
@@ -20,13 +28,14 @@ export default function Index() {
 
         <h2>Day Planner:</h2>
 
+
         <Stack spacing={4}>
           <InputGroup>
             <InputLeftAddon children="Major Priority" />
             <Input type="text" value={input} onChange={(e) => setInput(e.target.value)}  placeholder="Major Priority" />
               // access the event, setInput to the value of event
           </InputGroup>
-          <Button colorScheme='red' size='large'>Submit </Button>
+          <Button colorScheme='red' onClick={handleInput} size='large'>Submit </Button>
 
           
         </Stack>
