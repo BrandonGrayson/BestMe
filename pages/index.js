@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Flex, Input, InputLeftAddon, Stack, InputGroup } from '@chakra-ui/react';
+import { Flex, Input, InputLeftAddon, Stack, InputGroup, Button } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
 
 
@@ -20,13 +20,16 @@ export default function Index() {
 
         <h2>Day Planner:</h2>
 
-        {/* <Stack spacing={4}> */}
+        <Stack spacing={4}>
           <InputGroup>
             <InputLeftAddon children="Major Priority" />
             <Input type="text" value={input} onChange={(e) => setInput(e.target.value)}  placeholder="Major Priority" />
               // access the event, setInput to the value of event
           </InputGroup>
-        {/* </Stack> */}
+          <Button colorScheme='red' size='large'>Submit </Button>
+
+          
+        </Stack>
 
 
 
