@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Flex, Input, InputLeftAddon, Stack, InputGroup, Button, UnorderedList } from '@chakra-ui/react';
+import { Flex, Input, InputLeftAddon, Stack, InputGroup, Button, UnorderedList, ListItem } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
 
 
@@ -38,7 +38,12 @@ export default function Index() {
           <Button colorScheme='red' onClick={handleInput} size='large'>Submit </Button>
         </Stack>
         <UnorderedList>
-          
+                {todos.map(({text, id}) => (
+                  <ListItem key={id}>
+                    <span>{text}</span>
+                    <Button colorScheme='red' size='xs'>X</Button>
+                  </ListItem>
+                ))}
         </UnorderedList>
       </Flex>
     </Layout >
