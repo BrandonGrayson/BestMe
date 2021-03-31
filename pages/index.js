@@ -27,7 +27,7 @@ export default function Index() {
     <Layout>
       <Flex direction="column">
 
-        <Text fontSize={{base: '32px', md:'40px', lg:'50px'}}>Day Planner</Text>
+        <Text mb={3} fontSize={{base: '32px', md:'40px', lg:'50px'}}> Day Planner </Text>
 
 
         <Stack spacing={4}>
@@ -39,7 +39,7 @@ export default function Index() {
           <Button colorScheme='red' onClick={handleInput} size='large'>Submit </Button>
         </Stack>
 
-        <Text fontSize={{base: "24px", md: "30px", lg: "38px"}} > Major Priority </Text>
+        <Text mt={3} fontSize={{base: "24px", md: "30px", lg: "38px"}} > Major Priority </Text>
 
         <UnorderedList>
                 {todos.map(({text, id}) => (
@@ -49,6 +49,7 @@ export default function Index() {
                   </ListItem>
                 ))}
         </UnorderedList>
+
       </Flex>
     </Layout >
   );
