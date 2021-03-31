@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Flex, Input, InputLeftAddon, Stack, InputGroup, Button, UnorderedList, ListItem } from '@chakra-ui/react';
+import { Flex, Input, InputLeftAddon, Stack, InputGroup, Button, UnorderedList, ListItem, Text } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
 
 
@@ -10,6 +10,7 @@ function generateId() {
 }
 
 export default function Index() {
+
   const [todos, setTodos] = useState([])
   const [input, setInput] = useState('')
 
@@ -18,12 +19,10 @@ export default function Index() {
       text: input,
       id: generateId()
     }))
-
     setInput("")
   }
 
   const removeTodo = (id) => setTodos((todos) => todos.filter((todo) => todo.id !== id))
-
   return (
     <Layout>
       <Flex direction="column">
@@ -39,6 +38,9 @@ export default function Index() {
           </InputGroup>
           <Button colorScheme='red' onClick={handleInput} size='large'>Submit </Button>
         </Stack>
+
+        <Text fontSize={{base: "24px", md: "40px", lg: "56px"}} > Major Priority </Text>
+
         <UnorderedList>
                 {todos.map(({text, id}) => (
                   <ListItem key={id}>
