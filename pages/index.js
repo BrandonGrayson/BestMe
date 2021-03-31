@@ -27,19 +27,19 @@ export default function Index() {
     <Layout>
       <Flex direction="column">
 
-        <h2>Day Planner:</h2>
+        <Text fontSize={{base: '32px', md:'40px', lg:'50px'}}>Day Planner</Text>
 
 
         <Stack spacing={4}>
           <InputGroup>
-            <InputLeftAddon children="Major Priority" />
+            <InputLeftAddon children="Enter A Todo" />
             <Input type="text" value={input} onChange={(e) => setInput(e.target.value)}  placeholder="Major Priority" />
               // access the event, setInput to the value of event
           </InputGroup>
           <Button colorScheme='red' onClick={handleInput} size='large'>Submit </Button>
         </Stack>
 
-        <Text fontSize={{base: "24px", md: "40px", lg: "56px"}} > Major Priority </Text>
+        <Text fontSize={{base: "24px", md: "30px", lg: "38px"}} > Major Priority </Text>
 
         <UnorderedList>
                 {todos.map(({text, id}) => (
