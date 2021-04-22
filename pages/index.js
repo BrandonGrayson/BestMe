@@ -22,7 +22,10 @@ export default function Index() {
     setInput("")
   }
 
+  
+
   const removeTodo = (id) => setTodos((todos) => todos.filter((todo) => todo.id !== id))
+
   return (
     <Layout>
       <Flex direction="column">
@@ -39,7 +42,7 @@ export default function Index() {
           <Button colorScheme='red' onClick={handleInput} size='large'>Submit </Button>
         </Stack>
 
-        <Text mt={3} fontSize={{base: "24px", md: "30px", lg: "38px"}} > Major Priority </Text>
+        <Text mt={3} mb={3} fontSize={{base: "24px", md: "30px", lg: "38px"}} > Major Priority </Text>
 
         <UnorderedList>
                 {todos.map(({text, id}) => (
